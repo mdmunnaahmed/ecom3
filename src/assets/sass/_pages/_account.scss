@@ -1,0 +1,119 @@
+.account-section {
+    background: $section-bg;
+    min-height: 100vh;
+    padding: 80px 0;
+}
+.account-content {
+    padding-right: 60px;
+    @include breakpoint(max-lg) {
+        padding-right: 0;
+    }
+    &__title {
+        font-size: 46px;
+        @include breakpoint(max-xxl) {
+            font-size: 36px;
+        }
+        @include breakpoint(max-md) {
+            font-size: 32px;
+        }
+        @include breakpoint(max-sm) {
+            font-size: 30px;
+        }
+    }
+    .logo {
+        @include breakpoint(max-lg) {
+            margin-top: 30px;
+        }
+    }
+}
+.account-thumb {
+    max-width: 500px;
+    width: 100%;
+    margin-top: 60px;
+    @include breakpoint(max-lg) {
+        margin-top: 50px;
+    }
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+.account-form-wrapper {
+    padding: 100px 40px;
+    background: $white;
+    box-shadow: 0 15px 40px rgba($primary-color,.1);
+    border-radius: 20px;
+    position: relative;
+    @include breakpoint(max-md) {
+        padding: 60px 30px 100px;
+    }
+    @include breakpoint(max-sm) {
+        padding: 40px 25px 100px;
+    }
+}
+.account-toggler {
+    margin-bottom: 40px;
+    background: rgba($base-color,.1);
+    display: inline-flex;
+    border-radius: 35px;
+    padding: 5px 6px;
+    li {
+        padding: 0;
+        a {
+            padding: 6px 25px;
+            border-radius: 25px;
+            &.active {
+                color: $white;
+                background: $base-color;
+            }
+        }
+    }
+}
+.account-form {
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .account-btn {
+        margin-top: 15px;
+    }
+}
+
+.pass-info {
+    padding-left: 15px;
+    li {
+        padding: 4px 0;
+        font-size: 14px;
+        position: relative;
+        padding-left: 25px;
+        &::before {
+            position: absolute;
+            content: '';
+            width: 10px;
+            height:10px;
+            border-radius: 50%;
+            background: $white;
+            border: 2px solid $border-color;
+            left: 0;
+            top: 12px;
+        }
+        &.done {
+            color: $success;
+            &::before {
+                background: $success;
+            }
+        }
+    }
+}
+.privacy-txt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: $section-bg;
+    padding: 15px 40px;
+    border-radius: 0 0 20px 20px;
+    font-size: 13px;
+}

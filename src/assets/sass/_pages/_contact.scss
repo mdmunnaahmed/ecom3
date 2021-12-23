@@ -1,0 +1,64 @@
+.contact-card {
+    padding: 60px 40px;
+    background: $white;
+    text-align: center;
+    box-shadow: 0 0 15px 5px rgba($primary-color, .05);
+    height: 100%;
+    @include breakpoint(max-sm) {
+        padding: 40px 25px;
+    }
+    .card-icon {
+        font-size: 56px;
+        color: $base-color;
+        margin-bottom: 25px;
+    }
+    .card-content {
+        .title {
+            margin-bottom: 10px;
+        }
+        span {
+            display: block;
+            color: #777;
+            margin-bottom: 5px;
+        }
+    }
+    .social-icons {
+        justify-content: center;
+        margin-top: 15px;
+        li {
+            a {
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+.contact-form-wrapper {
+    &__title {
+        margin-bottom: 35px;
+    }
+}
+.contact-form {
+    .form--group {
+        margin-bottom: 25px;
+        position: relative;
+    }
+    .form-label {
+        position: absolute;
+        left: 15px;
+        font-size: 13px;
+        background: $white;
+        padding: 1px 15px;
+        @include transition;
+        top: 0;
+        transform: translateY(-50%);
+    }
+    textarea.form--control {
+        height: 120px;
+    }
+    .cmn--btn {
+        padding: 11px 0;
+    }
+}

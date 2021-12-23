@@ -1,0 +1,48 @@
+.footer-section {
+    position: relative;
+    background: $base-color;
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.footer-top {
+    padding: 100px 0 60px;
+    @include breakpoint(max-lg) {
+        padding-top: 80px;
+    }
+    @include breakpoint(max-sm) {
+        padding-top: 60px;
+    }
+}
+
+.footer-widget {
+    .widget-title {
+        color: $white;
+        margin-bottom: 20px;
+        @include breakpoint(max-sm) {
+            margin-bottom: 12px;
+        }
+    }
+    .logo {
+        margin-bottom: 20px;
+    }
+    p, a {
+        color: $white;
+    }
+    .footer-links {
+        li {
+            border-top: 1px solid rgba($white, .15);
+            &:first-child {
+                border: 0;
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    position: relative;
+    padding: 25px 0;
+    border-top: 1px solid rgba($white, .15);
+}
