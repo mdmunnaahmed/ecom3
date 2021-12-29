@@ -1,7 +1,14 @@
 .promo-card {
     margin-top: 15px;
+    border: 0;
     .card-body, .card-header, .card-footer {
-        padding: 10px;
+        padding: 0px;
+    }
+    img {
+        width: 100%;
+    }
+    @include breakpoint(max-xxl) {
+        max-width: 300px;
     }
 }
 .promo-thumb {
@@ -60,7 +67,7 @@
             padding: 0;
             width: 30px;
             height:30px;
-            font-size: 14px;
+            font-size: 13px;
             background: $white;
             &:hover {
                 background: $base-color;
@@ -82,6 +89,7 @@
             @include transition;
             opacity: 0;
             border-radius: 0;
+            font-size: 13px !important;
         }
         img {
             width: 100%;
@@ -172,7 +180,7 @@
     }
 }
 
-.product-quick-wrapper {
+.product-wrapper {
     padding: 60px;
     border: 1px solid $border-color;
     @include breakpoint(max-md) {
@@ -184,11 +192,11 @@
     @include breakpoint(max-xs) {
         padding: 25px 15px;
     }
-    .quick-wrapper-header {
+    .product-wrapper-header {
         border-bottom: 1px solid $border-color;
         padding-bottom: 25px;
     }
-    .quick-product-content {
+    .product-wrapper-content {
         padding: 50px 0 0;
         .badge {
             margin-top: 10px;
@@ -295,6 +303,54 @@
 }
 // Product Quick View Ends Here
 
+
+// Feature Starts Here
+.feature-wrapper {
+    margin-top: 20px;
+    >.title {
+        margin-bottom: 10px;
+    }
+}
+.feature-product {
+    border: 0;
+    margin-bottom: 15px;
+    @include breakpoint(max-lg) {
+        &:nth-child(even) {
+            padding-right: 25px;
+        }
+        @include breakpoint(sm) {
+            width: 50%;
+        }
+    }
+    &:hover {
+        box-shadow: none;
+    }
+    .product-item__thumb {
+        width: 60px;
+        height:60px;
+        border: 1px solid $border-color;
+        img {
+            width: 100%;
+        }
+    }
+    .product-item__content {
+        padding: 0;
+        padding-left: 10px;
+        width: calc(100% - 50px);
+        .title {
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+        .price-wrapper {
+            font-size: 13px;
+        }
+        .rating {
+            margin-top: 0;
+            font-size: 13px;
+        }
+    }
+}
+// Feature Ends Here
 
 
 // Modal Starts Here

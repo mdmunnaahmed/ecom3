@@ -12,41 +12,40 @@
 
 // Inner Hero
 .inner-hero {
-    padding-top: 150px;
-    padding-bottom: 80px;
+    padding: 25px 0;
     position: relative;
     z-index: 1;
-    .shape1 {
-        right: 0;
-        top: 0;
-        z-index: -1;
-        max-width: 800px;
-        @include breakpoint(max-xxl) {
-            max-width: 550px;
-        }
-        @include breakpoint(max-xl) {
-            max-width: 500px;
-        }
-        @include breakpoint(max-lg) {
-            max-width: 400px;
-        }
-        @include breakpoint(max-md) {
-            display: none;
-        }
-    }
     .container {
         position: relative;
         z-index: 1;
     }
+    .title {
+        font-size: 26px;
+    }
 }
 
 .breadcrumb {
+    margin: 0;
     li {
-        font-size: 20px;
-        margin-right: 25px;
-        color: $dark;
+        margin-right: 15px;
+        padding-right: 25px;
+        position: relative;
+        &::before {
+            @include line-ico;
+            content: '\f105';
+            right: 0;
+            top: 8px;
+        }
+        &:last-child {
+            &::before {
+                display: none;
+            }
+        }
         a {
             color: $dark;
+            &:hover {
+                color: $base-color;
+            }
         }
         &:last-child {
             margin-right: 0;

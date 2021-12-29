@@ -48,6 +48,10 @@ $('.overlay').on('click', function() {
   $('.category-sidebar').slideUp(300)
 })
 
+$('.menu-close').on('click', function() {
+  $('.menu').removeClass('active')
+})
+
 // Odometer Counter
 $(".counter-item").each(function () {
   $(this).isInViewport(function (status) {
@@ -149,11 +153,19 @@ $('.search-toggler').on('click', function() {
   $('.search-wrapper').addClass('active')
   $('.overlay').addClass('active')
 })
+$('.btn-close').on('click', function() {
+  $('.search-wrapper').removeClass('active')
+  $('.overlay').removeClass('active')
+})
 
 // Category Toggler
 $('.all-categories').on('click', function() {
     $('.category-sidebar').slideToggle(300)
     $('.overlay').addClass('active')
+})
+$('.btn-close').on('click', function() {
+    $('.category-sidebar').slideUp(300)
+    $('.overlay').removeClass('active')
 })
 
 // Product Size Choice

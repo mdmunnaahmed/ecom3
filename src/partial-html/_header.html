@@ -10,15 +10,22 @@
                             <input type="text" class="form-control form--control" placeholder="Search for Products...">
                             <button type="submit" class="btn btn--md"><i class="las la-search"></i></button>
                         </div>
-                    </form>
+                    </form> 
+                    <button class="btn-close d-md-none"></button>
                 </div>
                 <!-- Search Form End -->
-                <ul class="user-nav-links d-flex flex-wrap align-items-center">
-                    <li><a href="#0" class="search-toggler d-md-none"><i class="fas fa-search"></i></a></li>
-                    <li><a href="dashboard.html" class="active"><i class="far fa-user"></i></a></li>
-                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> <span class="badge badge--round">02</span></a></li>
-                </ul>
-                <!-- User Nav Links End -->
+                <div class="header-contact d-flex align-items-center">
+                    <select class="form--select shadow-none outline-0 border-0 ms-4">
+                        <option>English</option>
+                        <option>Bangla</option>
+                        <option>Hindi</option>
+                    </select>
+                    <select class="form--select shadow-none outline-0 border-0 ms-4">
+                        <option>USD</option>
+                        <option>TK</option>
+                        <option>NSD</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>
@@ -52,12 +59,19 @@
                     <li>
                         <a href="contact.html">CONTACT</a>
                     </li>
+                    <button class="btn-close btn-close-white menu-close"></button>
                 </ul>
                 <!-- Menu Ends -->
-                <div class="header-trigger-wrapper d-flex d-lg-none align-items-center">
-                    <div class="header-trigger d-block d--none">
-                        <span></span>
-                    </div>
+
+                <div class="header-trigger-wrapper d-flex align-items-center">
+                    <ul class="user-nav-links d-flex flex-wrap align-items-center">
+                        <li><a href="#0" class="search-toggler d-md-none"><i class="las fa-search"></i></a></li>
+                        <li><a href="dashboard.html" class="active"><i class="lar fa-user"></i></a></li>
+                        <li><a href="cart.html"><i class="las fa-shopping-cart"></i> <span class="badge badge--round">02</span></a></li>
+                    </ul>
+                    <!-- User Nav Links End -->
+
+                    <div class="header-trigger d-block d-lg-none ms-4"><span></span></div>
                 </div>
             </div>
         </div>

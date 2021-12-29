@@ -1,48 +1,88 @@
-.footer-section {
-    position: relative;
-    background: $base-color;
-    .container {
-        position: relative;
-        z-index: 1;
+// Feature Info Starts Here
+.feature-info-item {
+    padding: 5px 25px;
+    @extend %flex;
+    border-radius: 5px;
+    font-size: 14px;
+    @include breakpoint(max-xl) {
+        padding: 25px 20px;
+        font-size: 13px;
     }
-}
-
-.footer-top {
-    padding: 100px 0 60px;
-    @include breakpoint(max-lg) {
-        padding-top: 80px;
+    @include breakpoint(max-xs) {
+        padding: 25px 0px;
+        font-size: 14px;
     }
-    @include breakpoint(max-sm) {
-        padding-top: 60px;
-    }
-}
-
-.footer-widget {
-    .widget-title {
-        color: $white;
-        margin-bottom: 20px;
-        @include breakpoint(max-sm) {
-            margin-bottom: 12px;
+    &__icon {
+        width: 55px;
+        height:55px;
+        background: $white;
+        // background: $section-bg;
+        @extend %flex-center;
+        font-size: 26px;
+        border-radius: 50%;
+        color: $base-color;
+        @include breakpoint(max-xl) {
+            width: 50px;
+            height:50px;
+            font-size: 24px;
         }
     }
-    .logo {
-        margin-bottom: 20px;
-    }
-    p, a {
-        color: $white;
-    }
-    .footer-links {
-        li {
-            border-top: 1px solid rgba($white, .15);
-            &:first-child {
-                border: 0;
+    &__content {
+        width:  calc(100% - 55px);
+        padding-left: 20px;
+        @include breakpoint(max-xl) {
+            width: calc(100% - 50px);
+            padding-left: 15px;
+        }
+        .title {
+            font-size: 17px;
+            margin-bottom: 5px;
+            @include breakpoint(max-xl) {
+                font-size: 16px;
             }
         }
     }
 }
+// Feature Info Ends Here
 
-.footer-bottom {
-    position: relative;
-    padding: 25px 0;
-    border-top: 1px solid rgba($white, .15);
+
+
+// Footer Starts Here
+.footer-top {
+    padding: 45px 0;
+    font-size: 14px;
+}
+.footer-widget {
+    &__title {
+        position: relative;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        &::before {
+            position: absolute;
+            content: '';
+            width: 35px;
+            height: 2px;
+            background: $base-color;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    .logo {
+        margin-bottom: 18px;
+    }
+}
+.footer-links {
+    li {
+        padding: 5px 0;
+    }
+}
+.footer-contacts {
+    li {
+        padding: 5px 0;
+    }
+}
+
+.copyright {
+    font-size: 14px;
 }
