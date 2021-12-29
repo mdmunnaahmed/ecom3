@@ -284,13 +284,14 @@
 }
 .thumb-slider-one {
     .thumb {
-        max-width: 450px;
+        // max-width: 500px;
+        margin: 0 auto;
+    }
+    .slick-dots {
+        bottom: 15px;
     }
 }
 .thumb-slider-two {
-    .slick-list, .slick-track {
-        padding: 10px 0 !important;
-    }
     .slick-current {
         .thumb {
             border-color: $base-color;
@@ -363,3 +364,453 @@
         outline: 0;
     }
 }
+
+// Product Details Starts Here
+.product-wrapper-content {
+    .info {
+        margin-top: 25px;
+        font-size: 14px;
+        li {
+            display: flex;
+            align-items: center;
+            .info-title {
+                margin-right: 25px;
+            }
+        }
+        .social-links {
+            li {
+                a {
+                    font-size: 18px;
+                    width: auto;
+                    height: auto;
+                    border: 0;
+                    padding: 0 5px;
+                    &:hover {
+                        color: $base-color;
+                        background: transparent;
+                    }
+                }
+            }
+        }
+    }
+
+}
+.delivery-info {
+    margin-top: 25px;
+    max-width:250px;
+    padding: 20px;
+    border-radius: 5px;
+}
+.delivery-info-item {
+    @extend %flex;
+    font-size: 12px;
+    margin-bottom: 15px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    .icon {
+        width: 25px;
+        font-size: 22px;
+        line-height: 1.3;
+    }
+    .content {
+        width: calc(100% - 25px);
+        padding-left: 8px;
+    }
+}
+
+.product-details {
+    margin-top: 60px;
+    .card--body {
+        p {
+            margin-bottom: 15px;
+        }
+    }
+    .info-list {
+        padding-left: 15px;
+        li {
+            position: relative;
+            padding-left: 15px;
+            &::before {
+                @include before-set;
+                width: 6px;
+                height:6px;
+                border-radius: 50%;
+                background: $body-color;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+.tab-menu {
+    margin: 0;
+    font-size: 14px;
+    justify-content: center;
+    li {
+        padding: 0 10px;
+        a {
+            padding: 5px 10px;
+            font-weight: 700;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: '';
+                width: 0%;
+                height: 2px;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                background: $base-color;
+                @include transition;
+            }
+            &.active {
+                color: $base-color;
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+// Reviews Starts
+.review-item {
+    @extend %flex;
+    &__thumb {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__content {
+        padding-left: 15px;
+        width: calc(100% - 60px);
+        @include breakpoint(max-xs) {
+            width: 100%;
+            padding-left: 0;
+            padding-top: 15px;
+        }
+        .name-wrapper {
+            margin-top: 3px;
+            .name {
+                margin: 0;
+                margin-bottom: 5px;
+            }
+            .date {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+.add-review-form {
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .rating {
+        font-size: 20px;
+        li {
+            cursor: pointer;
+        }
+    }
+}
+// Product Details Ends Here
+
+
+$unchecked-color: #999;
+$unchecked-star: '\2606';
+$checked-star: '\2605';
+.star-cb-group {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    & > input {
+      display: none;
+      & + label {
+        display: inline-block;
+        overflow: hidden;
+        text-indent: 9999px;
+        width: 20px;
+        font-size: 22px;
+        white-space: nowrap;
+        cursor: pointer;
+        line-height: 1;
+        &:before {
+          display: inline-block;
+          text-indent: -9999px;
+          content: $unchecked-star;
+          color: $unchecked-color;
+        }
+      }
+      &:checked ~ label:before,
+        & + label:hover ~ label:before,
+        & + label:hover:before {
+        content: $checked-star;
+        color: $star;
+        text-shadow: 0 0 1px $star;
+      }
+    }
+    &:hover > input + label:hover ~ label:before,
+    &:hover > input + label:hover:before {
+      content: $checked-star;
+      color: $star;
+      text-shadow: 0 0 1px $star;
+    }
+}
+
+
+// Blog Section Starts Here
+.post-item {
+    margin-top: 10px;
+    &:hover {
+        .post-item__thumb {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+    &__thumb {
+        border-radius: 15px;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+    &__content {
+        padding-top: 12px;
+        .tag {
+            color: $base-color;
+            margin-bottom: 7px;
+        }
+        .title {
+            a {
+                @include text-wrap;
+            }
+        }
+    }
+}
+// Blog Section Ends Here
+
+
+// Blog Details Starts Here
+.blog-details {
+    .blog-details__thumb {
+        width: 100%;
+        margin-bottom: 30px;
+        img {
+            width: 100%;
+        }
+    }
+    .blog-meta {
+        font-size: 13px;
+        li {
+            margin-right: 25px;
+            i {
+                margin-right: 7px;
+                color: $base-color;
+            }
+        }
+    }
+    .post__author {
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+    }
+    .blog-details__content {
+        p {
+            margin-bottom: 15px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .blockquote {
+        font-size: 15px;
+        background: $section-bg;
+        padding: 15px;
+        border-left: 2px solid $base-color;
+        font-style: italic;
+        font-weight: 500;
+    }
+}
+.shadow--sm {
+    box-shadow: 0px 4px 6px rgba($dark, .07) !important;
+}
+.shadow {
+    box-shadow: 0px 4px 15px rgba($dark, .07) !important;
+}
+.shadow--lg {
+    box-shadow: 0px 4px 25px rgba($dark, .07) !important;
+}
+.post-widget {
+    position: sticky;
+    top: 10px;
+    background: $white;
+    .pro-title {
+        position: relative;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid $border-color;
+        &::before {
+            height: 3px;
+            content: "";
+            position: absolute;
+            width: 40px;
+            background: $base-color;
+            bottom: 0;
+            left: 0;
+        }
+        &::after {
+            height: 3px;
+            content: "";
+            position: absolute;
+            width: 15px;
+            background: $base-color;
+            bottom: 0;
+            left: 45px;
+        }
+    }
+}
+.latest-posts {
+    li {
+        padding: 15px 0;
+        @extend %flex;
+    }
+    .post-thumb {
+        width: 75px;
+        img {
+            width: 75px;
+            border-radius: 10px;
+        }
+    }
+    .post-info {
+        width: calc(100% - 75px);
+        padding-left: 15px;
+        a {
+            @include text-wrap;
+        }
+        .posts-date {
+            font-size: 12px;
+            margin-top: 5px;
+            i {
+                color: $base-color;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+// Blog Details Ends Here
+
+
+// Faq Section Starts Here
+.faq-wrapper {
+    @extend %flex;
+}
+.faq-item {
+    margin-top: 25px;
+    &.active {
+        .faq-item__content {
+            display: block;
+        }
+    }
+    &:first-child {
+        margin-top: 0;
+    }
+    &__title {
+        padding: 5px 10px;
+        cursor: pointer;
+        .title {
+            font-size: 17px;
+        }
+    }
+    &__content {
+        padding: 10px;
+        padding-top: 5px;
+        display: none;
+    }
+}
+// Faq Section Ends Here
+
+
+// Privacy Policy Section Starts Here
+.privacy-policy {
+    overflow: initial !important;
+}
+.privacy-policy-sidebar-menu {
+    position: sticky;
+    top: 20px;
+    li {
+        width: 100%;
+        padding: 0;
+        border-bottom: 1px dashed $border-color;
+        &:last-child {
+            border: 0;
+        }
+        a {
+            font-weight: 600;
+            padding: 12px 0;
+            color: $body-color;
+            display: block;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+            &::before {
+                position: absolute;
+                content: '';
+                width: 3px;
+                height: 0;
+                background: $base-color;
+                right: 0;
+                top: 0;
+                @include transition;
+            }
+            &.active {
+                &::before {
+                    height: 100%;
+                    transform-origin: bottom;
+                }
+            }
+            &:hover {
+                color: $base-color;
+            }
+        }
+    }
+}
+.privacy-policy-content {
+    padding-left: 40px;
+    @include breakpoint(max-xl) {
+        padding-left: 20px;
+    }
+    @include breakpoint(max-lg) {
+        padding-left: 0px;
+    }
+    .content-item {
+        margin-bottom: 40px;
+        .title {
+            margin-bottom: 15px;
+        }
+        .info-list {
+            margin-top: 15px;
+            li {
+                padding-left: 25px;
+                position: relative;
+                &::before {
+                    @include line-ico;
+                    content: "\f101";
+                    left: 0;
+                    top: 6px;
+                    color: $base-color;
+                }
+            }
+        }
+    }
+}
+// Privacy Policy Section Ends Here

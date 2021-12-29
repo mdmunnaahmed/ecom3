@@ -1,23 +1,24 @@
 .pagination {
     margin: 0;
-    margin-top: 55px;
     @extend %flex;
     justify-content: center;
-    @include breakpoint(max-sm) {
-        margin-top: 30px;
-    }
     .page-item {
         text-align: center;
-        padding: 3px;
+        padding: 3px 5px;
         a,
         span {
-            width: 45px;
-            height: 45px;
-            color: $base-color;
-            line-height: 45px;
+            @extend %flex-center;
             padding: 0;
-            // border: none;
-            border-color: rgba($base-color,.4);
+            font-weight: 700;
+            font-size: 15px;
+            width: 40px;
+            height:40px;
+            color: $base-color;
+            border-radius: 5px;
+            // border:2px solid rgba($base-color,.4);
+            border: 0 !important;
+            outline: 0 !important;
+            box-shadow: none !important;
         }
         span {
             border: none;
@@ -28,15 +29,14 @@
             a {
                 background: $base-color;
                 color: $white;
-                border-color: rgba($title-color,.2);
+                border-color: rgba($base-color,.4);
             }
         }
         &.disabled {
             cursor: no-drop !important;
             span, a {
                 background: rgba($section-bg, .5);
-                border: none;
-                color: $title-color;
+                color: #999;
             }
         }
     }

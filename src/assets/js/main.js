@@ -110,7 +110,7 @@ $('.thumb-slider-one').slick({
 });
 $('.thumb-slider-two').slick({
   fade: false,
-  slidesToShow: 4,
+  slidesToShow: 5,
   slidesToScroll: 1,
   infinite: true,
   pauseOnHover: true,
@@ -123,25 +123,25 @@ $('.thumb-slider-two').slick({
     {
       breakpoint: 1200,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 4,
       }
     },
     {
       breakpoint: 992,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 5,
       }
     },
     {
       breakpoint: 768,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 4,
       }
     },
     {
       breakpoint: 576,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 3,
       }
     },
 
@@ -212,5 +212,31 @@ $('.category-sidebar li a').on('click', function () {
     element.siblings('li').removeClass('open');
     element.siblings('li').find('li').removeClass('open');
     element.siblings('li').find('ul').slideUp(300, "swing");
+  }
+});
+
+// Make Rating
+var logID = 'log',
+  log = $('<div id="'+logID+'"></div>');
+$('body').append(log);
+  $('[type*="radio"]').change(function () {
+    var me = $(this);
+    log.html(me.attr('value'));
+});
+
+//Faq
+$('.faq-item__title').on('click', function (e) {
+  var element = $(this).parent('.faq-item');
+  if (element.hasClass('open')) {
+    element.removeClass('open');
+    element.find('.faq-item__content').removeClass('open');
+    element.find('.faq-item__content').slideUp(300, "swing");
+  } else {
+    element.addClass('open');
+    element.children('.faq-item__content').slideDown(300, "swing");
+    element.siblings('.faq-item').children('.faq-item__content').slideUp(300, "swing");
+    element.siblings('.faq-item').removeClass('open');
+    element.siblings('.faq-item').find('.faq-item__title').removeClass('open');
+    element.siblings('.faq-item').find('.faq-item__content').slideUp(300, "swing");
   }
 });

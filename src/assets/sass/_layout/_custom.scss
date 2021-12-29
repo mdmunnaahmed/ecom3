@@ -1,47 +1,4 @@
-
-.table {
-    margin: 0;
-    border: none;
-    width: 100%;
-    border-collapse: collapse;
-    thead {
-        tr {
-            background: rgba($base-color,1);
-            th {
-                padding: 10px 15px;
-                font-family: $heading;
-                color: $white;
-                border: none;
-                font-size: 15px;
-                font-weight: 500;
-                border: 1px solid $border-color;
-            }
-        }
-    }
-    tbody {
-        font-size: 14px;
-        tr {
-            @include transition;
-            &:nth-child(odd) {
-                background: rgba($primary-color, .04);
-            }
-            &:hover {
-                background: $white;
-            }
-            td {
-                .badge {
-                    text-transform: capitalize;
-                }
-                color: $body-color;
-                vertical-align: middle;
-                padding: 10px 15px;
-                border-width: 1px;
-                @include breakpoint(lg) {
-                    border-color: $border-color;
-                }
-            }
-        }
-    }
+.table.table--responsive {
     @include breakpoint(max-lg) {
         thead {
             display: none;
@@ -74,6 +31,45 @@
         }
     }
 }
+.table {
+    margin: 0;
+    border: none;
+    width: 100%;
+    border-collapse: collapse;
+    thead {
+        tr {
+            background: rgba($base-color,1);
+            th {
+                padding: 10px 15px;
+                font-family: $heading;
+                color: $white;
+                border: none;
+                font-size: 15px;
+                font-weight: 500;
+                border: 1px solid $border-color;
+            }
+        }
+    }
+    tbody {
+        font-size: 14px;
+        tr {
+            @include transition;
+            &:hover {
+                background: $white;
+            }
+            td {
+                .badge {
+                    text-transform: capitalize;
+                }
+                color: $body-color;
+                vertical-align: middle;
+                padding: 10px 15px;
+                border-width: 1px;
+                border-color: $border-color;
+            }
+        }
+    }
+}
 
 .custom--card {
     border: 1px solid $border-color;
@@ -81,29 +77,81 @@
     background: $white;
 }
 
-.custom--card .card-header {
+.custom--card .card--header,
+.custom--card .card--footer {
+    background: $section-bg;
     color: $dark;
-    background: $primary-color;
     text-align: center;
-    margin-left: -1px;
-    margin-right: -1px;
-    padding-top: 10px;
-    padding-bottom: 10px;
     .card-title {
         color: $white;
         margin: 0;
     }
 }
 
-.custom--card .card-body {
-    border-radius: 5px;
-    &.radius-0 {
-        border-radius: 0;
+.custom--card.card--primary .card--header,
+.custom--card.card--primary .card--footer {
+    background: $primary-color
+}
+.custom--card.card--base .card--header,
+.custom--card.card--base .card--footer {
+    background: $base-color;
+
+}
+
+.custom--card .card--header,
+.custom--card .card--footer {
+    padding: 15px 25px;
+    border-color: $border-color !important;
+    @include breakpoint(max-sm) {
+        padding: 10px 20px;
+    }
+    @include breakpoint(max-sm) {
+        padding: 8px 15px;
+    }
+}
+.custom--card .card--body {
+    padding: 25px;
+    @include breakpoint(max-sm) {
+        padding: 20px;
+    }
+    @include breakpoint(max-xs) {
+        padding: 15px;
     }
 }
 
-.custom--card .card-footer {
-    border-color: #e5e5e5;
+.custom--card.card--lg .card--header,
+.custom--card.card--lg .card--footer {
+    padding: 20px 35px;
+    @include breakpoint(max-md) {
+        padding: 15px 25px;
+    }
+    @include breakpoint(max-sm) {
+        padding: 10px 20px;
+    }
+    @include breakpoint(max-xs) {
+        padding: 8px 15px;
+    }
+}
+.custom--card.card--lg .card--body {
+    padding: 35px;
+    @include breakpoint(max-md) {
+        padding: 25px;
+    }
+    @include breakpoint(max-sm) {
+        padding: 20px;
+    }
+    @include breakpoint(max-xs) {
+        padding: 15px;
+    }
+}
+
+.custom--card.card--md .card--header,
+.custom--card.card--md .card--footer {
+    padding: 10px 20px;
+}
+.custom--card.card--md .card--body {
+    padding: 20px 20px;
+
 }
 
 .badge {
@@ -111,7 +159,7 @@
     padding: 5px 12px ;
     color: $white;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     &:hover {
         color: $white;
@@ -122,7 +170,7 @@
     }
     &.badge--md {
         padding: 4px 8px ;
-        font-size: 12px;
+        font-size: 11px;
     }
     &.badge--xs {
         padding: 2px 8px ;
